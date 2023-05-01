@@ -40,6 +40,11 @@ It's worth noting that the model has recently been launched, and it's expected t
 # Installation and running
 
 Make sure that your CPU supports `AVX2` instruction set. Without it, this application won't run out of the box. To check your CPU features, please visit the website of your CPU manufacturer for more information and look for `Instruction set extension: AVX2`.
+
+- linux: `cat /proc/cpuinfo | grep avx2`
+- mac: `cat /proc/cpuinfo | grep avx2`
+- windows: `Get-CimInstance -ClassName CIM_Processor | Select-Object -Property Name, MaxClockSpeed, Manufacturer, Caption, Description, DeviceID, AddressWidth, DataWidth, ExtensionData | Format-Table | findstr /i "avx2"`
+
 > **Note**
 >
 >Default model `gpt4all-lora-quantized-ggml.bin` is roughly 4GB in size.
